@@ -5,13 +5,17 @@ import {Container , AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import Form  from './components/Form/Form'
 import Posts  from './components/Posts/Posts'
 import imgurllinks from './images/icon1.jpg'
+import useStyles from './styles';
+
 
 const App = ()=> {
+    const classes = useStyles();
+
 return(
     <Container maxwidth ='lg'>
-        <AppBar position = 'static' color = 'inherit'>
-            <Typography variant = 'h2' align = 'center '> Don Don Donki </Typography>
-            <img src = {imgurllinks} alt= "imgurllinks" height = '60' />
+        <AppBar className = {classes.appBar} position = 'static' color = 'inherit'>
+            <Typography className = {classes.heading} variant = 'h2' align = 'center '> Don Don Donki </Typography>
+            <img className = {classes.image}src = {imgurllinks} alt= "imgurllinks" height = '60' />
         </AppBar>
 
         <Grow in> 
