@@ -1,11 +1,8 @@
+//https://5000-aqua-cobra-hevw6c7n.ws-us03.gitpod.io/posts
 import express, { response } from 'express';
+import {getPost} from '../controllers/post.js'
 
 const router = express.Router();
 
-router.get('/', (req,res)=> {
-    res.send('this works?')
-})
-
+router.get('/',getPost);
 export default router;
-
-//http://localhost:5000/posts
