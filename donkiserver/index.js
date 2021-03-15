@@ -8,15 +8,12 @@ import postRoutes from './routes/posts.js'
 
 const app = express();
 
-app.use ('/posts',postRoutes)
-
-
-
 app.use(bodyParser.json({limit: "30mb", extender : true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extender : true}));
 app.use(cors());
 
-///
+/// must use this after cors
+app.use ('/posts', postRoutes)
 
 const MONGO_URL = 'mongodb+srv://donkininja:donkininja123@cluster0.ztlfx.mongodb.net/Donki_Database?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000; 
